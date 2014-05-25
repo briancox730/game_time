@@ -1,0 +1,23 @@
+<div class="index">
+  <h2><%= @team_name %></h2>
+  <ul>
+    <% @team_stats[@team_name].each do |stats| %>
+      <% stats.each do |game| %>
+        <li>
+          <div class="left">
+            <%= @team_name %>
+          </div>
+          <div class="score">
+            <%= game[:score] %>
+          </div>
+          <div class="score">
+            <%= game[:score_away] %>
+          </div>
+          <div class="right">
+            <a href="/teams/<%= game[:op_team] %>"><%= game[:op_team] %></a>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

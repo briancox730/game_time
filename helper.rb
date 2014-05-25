@@ -1,4 +1,5 @@
 require 'csv'
+require 'pry'
 
 def stat_builder
   stats = []
@@ -30,6 +31,7 @@ def leaderboard_builder(stats)
       leaderboard[game[:home_team]][:loss] += 1
     end
   end
+
   leaderboard
 end
 
@@ -51,3 +53,5 @@ def team_info(team, stats)
   end
   team_record
 end
+
+puts team_info("Patriots", stat_builder)

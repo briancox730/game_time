@@ -1,0 +1,31 @@
+<div class="index">
+  <h2>Leaderboard</h2>
+  <ul>
+    <li>
+      <div class="header">
+        <div class="left">
+          &nbsp;
+        </div>
+        <div class="score">
+          w
+        </div>
+        <div class="score">
+          l
+        </div>
+      </div>
+    </li>
+    <% @leaderboard.each do |season, record| %>
+      <li>
+        <div class="left">
+          <a href="/teams/<%= season %>"><%= season %></a>
+        </div>
+        <div class="score">
+          <%= record[:win] %>
+        </div>
+        <div class="score">
+          <%= record[:loss] %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
