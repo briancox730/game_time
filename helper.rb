@@ -32,7 +32,7 @@ def leaderboard_builder(stats)
     end
   end
 
-  leaderboard
+  leaderboard.sort_by {|team, stats| [-stats[:win], stats[:loss]]}
 end
 
 def team_info(team, stats)
@@ -54,4 +54,3 @@ def team_info(team, stats)
   team_record
 end
 
-puts team_info("Patriots", stat_builder)

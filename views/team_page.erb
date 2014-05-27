@@ -1,5 +1,10 @@
 <div class="index">
   <h2><%= @team_name %></h2>
+  <% @leaderboard.each do |team, stats| %>
+    <% if @team_name == team %>
+      <span class="subtitle">Record: <%= stats[:win] %>/<%= stats[:loss] %></span>
+    <% end %>
+  <% end %>
   <ul>
     <% @team_stats[@team_name].each do |stats| %>
       <% stats.each do |game| %>

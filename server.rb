@@ -20,6 +20,7 @@ get '/teams/:team_name' do
   @title = params[:team_name]
   @team_name = params[:team_name]
   @stats = stat_builder
+  @leaderboard = leaderboard_builder(@stats)
   @team_stats = team_info(@team_name, @stats)
   erb :team_page
 end
